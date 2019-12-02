@@ -28,20 +28,13 @@ if (localStorage.getItem('Theme') === Theme.DARK) {
 }
 
 const cheacked = function(e) {
-  if (
-    document.body.classList.contains(Theme.LIGHT) ||
-    document.body.classList.contains(Theme.DARK)
-  ) {
-    if (e.target.checked) {
-      refs.body.classList.replace(Theme.LIGHT, Theme.DARK);
-      localStorage.setItem('Theme', Theme.DARK);
-    } else {
-      refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
-      localStorage.setItem('Theme', Theme.LIGHT);
-    }
-  } else {
-    refs.input.checked = true;
+  if (e.target.checked) {
+    refs.body.classList.replace(Theme.LIGHT, Theme.DARK);
+    localStorage.setItem('Theme', Theme.DARK);
     document.body.classList.add(Theme.DARK);
+  } else {
+    refs.body.classList.replace(Theme.DARK, Theme.LIGHT);
+    localStorage.setItem('Theme', Theme.LIGHT);
   }
 };
 
